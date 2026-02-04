@@ -23,4 +23,24 @@ checkStudyEnergy()
 
 
 
-//Part 2:Part 2: Fetching Data from an API --
+// part 2.Fetching Data from an API- (using country details API)-
+
+const fetchCountryData = (countryname) => {
+const promise = fetch(`https://restcountries.com/v3.1/name/${countryname}`) 
+    .then((response) => response.json())
+    .then((data) => {
+        console.log("🌍 Country :-" , data[0].name.official)
+        console.log("🏛️ Capital :-", data[0].capital[0])
+        console.log("🌐 Region :-", data[0].region)
+    })
+    .catch((error) => {
+        console.log('error fetching data:', error);
+    })
+};
+
+fetchCountryData("sweden");
+fetchCountryData("italy");
+fetchCountryData("france");
+
+
+

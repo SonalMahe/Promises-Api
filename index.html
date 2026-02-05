@@ -21,8 +21,7 @@
                     return fetchCountryData();
                 })
                 .then((countryData) => {
-                    document.getElementById('result').innerText +=
-                        `\n\nCountry Data:\n ${countryData}`;
+                    document.getElementById('result').innerText += `\n\nCountry Data:\n ${countryData}`;
                 })
                 .catch((error) => {
                     document.getElementById('result').innerText = error;
